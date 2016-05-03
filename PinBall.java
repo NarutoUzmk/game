@@ -18,19 +18,19 @@ import javax.swing.Timer;
 public class PinBall {
 	private int count = 0;
 	private final int TABLE_WIDTH = 500;
-	private final int TABLE_HEIGHT = 500;//×À¿íºÍ¸ß
-	private final int RACKET_Y = 460;//ÇòÅÄµÄ³õÊ¼´¹Ö±Y¸ß¶È
-	private final int RACKET_HEIGHT = 20;//ÇòÅÄµÄ´óĞ¡
+	private final int TABLE_HEIGHT = 600;//æ¡Œå®½å’Œé«˜
+	private final int RACKET_Y = 460;//çƒæ‹çš„åˆå§‹å‚ç›´Yé«˜åº¦
+	private final int RACKET_HEIGHT = 20;//çƒæ‹çš„å¤§å°
 	private final int RACKET_WIDTH = 60;
-	private final int BALL_SIZE = 16;//ÇòµÄ´óĞ¡
-	private Frame fa = new Frame("µ¯ÇòÓÎÏ·");
-	Random rand = new Random();//Éè¶¨Ò»¸öËæ»úÖµ
+	private final int BALL_SIZE = 16;//çƒçš„å¤§å°
+	private Frame fa = new Frame("å¼¹çƒæ¸¸æˆ");
+	Random rand = new Random();//è®¾å®šä¸€ä¸ªéšæœºå€¼
 	private int Yspeed = 16;
-	private double xyRate = rand.nextDouble()-0.63;//Éè¶¨Ò»¸ö±ÈÂÊÖµÀ´¿ØÖÆĞ¡Çò·½Ïò
-	private int Xspeed = (int)(Yspeed*xyRate*2);//Ğ¡ÇòºáÏòÔËĞĞËÙ¶È
-	private int ballY = rand.nextInt(200)+20;//Ğ¡ÇòµÄ×ø±ê
+	private double xyRate = rand.nextDouble()-0.63;//è®¾å®šä¸€ä¸ªæ¯”ç‡å€¼æ¥æ§åˆ¶å°çƒæ–¹å‘
+	private int Xspeed = (int)(Yspeed*xyRate*2);//å°çƒæ¨ªå‘è¿è¡Œé€Ÿåº¦
+	private int ballY = rand.nextInt(200)+20;//å°çƒçš„åæ ‡
 	private int ballX = rand.nextInt(10)+20;
-	private int racketX = rand.nextInt(200);//ÇòÅÄË®Æ½Î»ÖÃ
+	private int racketX = rand.nextInt(200);//çƒæ‹æ°´å¹³ä½ç½®
 	Timer timer;
 	private MyCanvas tableArea = new MyCanvas();
 	private boolean isLose = false;
@@ -54,7 +54,7 @@ public class PinBall {
 		};
 		fa.addKeyListener(keyPressor);
 		tableArea.addKeyListener(keyPressor);
-		ActionListener taskPerformer = evt ->//Ö´ĞĞĞ¡Çò¼àÊÓÆ÷£¬²¢¶¨ÒåÃ¿0.1sË¢ĞÂÒ»´Î
+		ActionListener taskPerformer = evt ->//æ‰§è¡Œå°çƒç›‘è§†å™¨ï¼Œå¹¶å®šä¹‰æ¯0.1såˆ·æ–°ä¸€æ¬¡
 		{
 			if(ballX <= 0 || ballX >= TABLE_WIDTH-BALL_SIZE)
 			{
@@ -99,7 +99,7 @@ public class PinBall {
 			{
 				g.setColor(new Color(255,0,0));
 				g.setFont(new Font("Times",Font.BOLD,30));
-				g.drawString("ÓÎÏ·ÒÑ½áÊøÄúµÄ·ÖÊıÎª:"+count, 50, 200);
+				g.drawString("æ¸¸æˆå·²ç»“æŸæ‚¨çš„åˆ†æ•°ä¸º:"+count, 50, 200);
 			}
 			else{
 				g.setColor(new Color(240,240,80));
